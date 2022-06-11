@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Componente from "../views/Componente.vue";
-
+import EditPage from '@/views/Edicao.vue'
+import '@/assets/estilo.css'
 Vue.use(VueRouter);
 
 const routes = [
@@ -11,8 +11,8 @@ const routes = [
     component: () => import("../layouts/DefaultLayout.vue"),
     children: [
       {
-        path: "/",
-        component: Componente,
+        path: "/personalizacao",
+        component: EditPage,
       },
     ],
   },
