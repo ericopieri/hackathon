@@ -1,7 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import EditPage from '@/views/Edicao.vue'
-import '@/assets/estilo.css'
 Vue.use(VueRouter);
 
 const routes = [
