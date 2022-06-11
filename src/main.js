@@ -10,6 +10,7 @@ Vue.use(mdiVue, {
   icons: mdijs
 }) 
 
+
 Vue.config.productionTip = false
 
 new Vue({
