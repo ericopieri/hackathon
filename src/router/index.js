@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Componente from "../views/Componente.vue";
+import MainPage from '@/views/MainPage.vue'
 
 Vue.use(VueRouter);
 
@@ -11,8 +11,8 @@ const routes = [
     component: () => import("../layouts/DefaultLayout.vue"),
     children: [
       {
-        path: "/",
-        component: Componente,
+        path: "",
+        component: MainPage,
       },
     ],
   },
