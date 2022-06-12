@@ -1,6 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import EditPage from '@/views/Edicao.vue'
+import Home from '../views/Home.vue'
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -9,6 +11,10 @@ const routes = [
     name: "estruturado",
     component: () => import("../layouts/DefaultLayout.vue"),
     children: [
+      {
+        path: '',
+        component: Home
+      },
       {
         path: "/personalizacao",
         component: EditPage,
