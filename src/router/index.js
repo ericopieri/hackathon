@@ -8,7 +8,6 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    name: "estruturado",
     component: () => import("../layouts/DefaultLayout.vue"),
     children: [
       {
