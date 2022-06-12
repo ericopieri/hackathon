@@ -2,7 +2,7 @@
     <nav class="nav">
         <div class="logo-nav">
             <div class="logo"></div>
-            <a href=""><mdicon class="icone-logo" name="HomeOutline"></mdicon></a>
+            <router-link to="/"><mdicon class="icone-logo" name="HomeOutline"></mdicon></router-link>
         </div>
         <div class="box-icon-nav">
             <a href="#" class="icone-nav"><mdicon size="large" title="Editar" name="pencil-outline"></mdicon></a>

@@ -8,16 +8,22 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    name: "estruturado",
     component: () => import("../layouts/DefaultLayout.vue"),
     children: [
       {
         path: '',
-        component: Home
+        component: Home,
+        props: true
       },
       {
         path: "/personalizacao",
         component: EditPage,
+        props: true
+      },
+      {
+        path: `/personalizacao/:id`,
+        component: EditPage,
+        props: true
       },
     ],
   },
