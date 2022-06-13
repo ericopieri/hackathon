@@ -1,11 +1,10 @@
 <template>
-  <div v-if="galao" class="garrafa-personalizavel" id="garrafaPersonalizavelId1" ref="garrafa">
+  <div class="garrafa-personalizavel" id="garrafaPersonalizavelId1" ref="garrafa">
   </div>
 </template>
 
 <script>
 export default {
-  props:['galao'],
   data(){
     return{
       currentId: ''
@@ -20,7 +19,7 @@ export default {
       this.currentId = novoId
     },
     verificaGalao(){
-      switch (this.galao){
+      switch (this.$route.params.id) {
         case 'galao1':
           this.mudaIdDiv('garrafaPersonalizavelId1')
           break
