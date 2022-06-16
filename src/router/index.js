@@ -16,12 +16,7 @@ const routes = [
         props: true
       },
       {
-        path: "/personalizacao",
-        component: EditPage,
-        props: true
-      },
-      {
-        path: `/personalizacao/:id`,
+        path: "/personalizacao/:id",
         component: EditPage,
         props: true
       },
