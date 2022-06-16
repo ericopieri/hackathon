@@ -3,15 +3,8 @@
         <h1 class="Titulo-personalizacao">PERSONALIZE SUA GARRAFA:</h1>
         <div class="conteudo-garrafa">
             <div class="box-garrafa">
-            <GarrafaPersonalizavel />
-            <div class="box-cores">
-                <div class="box-cor-azul"></div>
-                <div class="box-cor-rosa"></div>
-                <div class="box-cor-verde"></div>
-                <div class="box-cor-marrom"></div>
-                <div class="box-cor-lilas"></div>
-                <div class="box-cor-preto"></div>
-            </div>  
+                <GarrafaPersonalizavel />
+                <BoxCores/>
             </div>
             <Personalizacao />
         </div>
@@ -20,8 +13,9 @@
 <script>
 import GarrafaPersonalizavel from '@/components/GarrafaPersonalizavel.vue'
 import Personalizacao from '@/components/Personalizacao.vue'
+import BoxCores from '@/components/BoxCores.vue'
 export default {
-    components: { GarrafaPersonalizavel, Personalizacao },
+    components: { GarrafaPersonalizavel, Personalizacao, BoxCores },
     data(){
         return {
             possibleGaloes: ['galao1', 'galao2', 'galao3']
