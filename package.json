@@ -10,6 +10,7 @@
   "dependencies": {
     "@mdi/js": "^6.7.96",
     "core-js": "^3.8.3",
+    "fabric": "^5.2.1",
     "fabricjs": "^1.0.0",
     "html2canvas": "^1.4.1",
     "mdi-vue": "^3.0.13",
