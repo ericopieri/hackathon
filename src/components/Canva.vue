@@ -29,9 +29,9 @@ export default {
       reader.onload = (fileReaded) => {
         new fabric.Image.fromURL(fileReaded.target.result, (image) => {
           if (image.width > 500) {
-            image.scale(0.25);
-          } else {
             image.scale(0.15);
+          } else {
+            image.scale(0.05);
           }
           this.canvas.add(image);
         });

@@ -119,7 +119,7 @@
   left: 15%;
   top: 15%;
   border: 1px solid rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(18px);
 }
 .box-desc {
   margin-top: 5%;
@@ -230,7 +230,7 @@
   left: 15%;
   top: 10%;
   border: 1px solid rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(18px);
 }
 .conteudo-garrafa {
   width: 100%;
@@ -444,4 +444,222 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+
+.container-carrinho {
+  width: 90%;
+  left: 5%;
+  height: 33%;
+  border-bottom: 1px solid #1b98e0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.container-carrinho:nth-child(3) {
+  border: none;
+}
+.box-imagem {
+  width: 20%;
+  height: 70%;
+  background-color: #e8f1f2;
+  border-radius: 5%;
+  border: 2px solid #1b98e0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.imagem-1 {
+  background-image: url(1.3.svg);
+  background-position: center;
+  background-size: contain;
+}
+.imagem-2 {
+  background-image: url(1.6.svg);
+  background-position: 70%;
+  background-size: contain;
+}
+.imagem-3 {
+  background-image: url(dose.svg);
+  background-position: 50%;
+  background-size: contain;
+}
+.box-textos-carrinho {
+  height: 95%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  justify-content: space-around;
+}
+.box-opcoes {
+  display: flex;
+  flex-direction: row;
+  gap: 10%;
+}
+.calculo-preco {
+  height: 60%;
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;   
+}
+.box-quantidade {
+  height: 50%;
+  width: 120%;
+  background-color: #e8f1f2;
+  border: 2px solid #1b98e0;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* ---------- Registro ------------- */
+
+.container-endereco {
+  width: 70%;
+  height: 88%;
+  top: 12%;
+  left: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2%;
+  position: absolute;
+}
+.box-blur {
+  width: 70%;
+  height: 80%;
+  background-color: rgb(255, 255, 255, 0.2);
+  box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.5);
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(18px);
+}
+.input-registro {
+  height: 8%;
+  width: 40%;
+  padding-left: 1%;
+  padding-right: 1%;
+  margin-left: 3.5%;
+  margin-right: 3.5%;
+  background-color: #e8f1f2;
+  border: 2px solid #1b98e0;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  font-size: 20px;
+  color: #1b98e0;
+}
+.input-Nome {
+  width: 90%;
+}
+.input-CEP {
+  width: 50%;
+}
+.input-Informacoes {
+  width: 90%;
+}
+.input-registro::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 25px;
+}
+.btn-confirmar {
+  width: 15%;
+  height: 8%;
+  background-color: #e8f1f2 ;
+  border: 0.5px solid #000;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-confirmar:hover {
+  background-color: #1b98e0;
+  border: 2px solid #e8f1f2;
+  cursor: pointer;
+}
+
+/*-----------Cadastro e Login-------------*/
+.container-Cadastro {
+  width: 70%;
+  height: 90%;
+  background-color: rgb(255, 255, 255, 0.2);
+  box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(18px);
+  left: 15%;
+  top: 10%;
+}
+.input-login {
+  height: 8%;
+  width: 90%;
+  padding-left: 1%;
+  padding-right: 1%;
+  margin-left: 3.5%;
+  margin-right: 4%;
+  background-color: #e8f1f2;
+  border: 2px solid #1b98e0;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  font-size: 20px;
+  color: #1b98e0;
+}
+.input-nome {
+  width: 40%;
+}
+.input-data{
+  color: rgba(0, 0, 0, 0.6);
+}
+.box-login {
+  width: 100%;
+  height: 10%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.btn-login {
+  width: 30%;
+  height: 90%;
+  background-color: #e8f1f2;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.btn-login:hover {
+  background-color: #1b98e0;
+  border: 2px solid #e8f1f2;
+  cursor: pointer;
+}
+.texto-login {
+  font-size: 35px;
+}
+.container-Login {
+  height: 70%;
+  top: 20%;
+}
+.texto-preto {
+  color: #000;
+}
+.logar {
+  height: 12%;
+}
+.id-compra {
+  color: #1b98e0;
 }

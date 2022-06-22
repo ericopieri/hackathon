@@ -120,7 +120,7 @@
     left: 15%;
     top: 15%;
     border: 1px solid rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(18px);
 }
 .box-desc {
     margin-top: 5%;
@@ -228,7 +228,7 @@
     left: 15%;
     top: 10%;
     border: 1px solid rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(18px);
 }
 .conteudo-garrafa {
     width: 100%;
@@ -347,3 +347,4 @@
     align-items: center;
     justify-content: space-around;
 }
+
