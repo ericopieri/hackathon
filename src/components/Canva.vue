@@ -37,6 +37,7 @@ export default {
         });
       };
       reader.readAsDataURL(file);
+      this.canvas.renderAll();
     },
   },
 };
