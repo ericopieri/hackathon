@@ -2,6 +2,10 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import EditPage from '@/views/Edicao.vue'
 import Home from '../views/Home.vue'
+import Carrinho from '../views/Carrinho.vue'
+import Historico from '../views/Historico.vue'
+import Login from '../views/Login.vue'
+import Cadastro from '../views/Cadastro.vue'
 
 Vue.use(VueRouter);
 
@@ -20,6 +24,22 @@ const routes = [
         component: EditPage,
         props: true
       },
+      {
+        path: "/carrinho",
+        component: Carrinho
+      },
+      {
+        path: "/historico",
+        component: Historico
+      },
+      {
+        path:"/login",
+        component: Login
+      },
+      {
+        path: "/cadastro",
+        component: Cadastro
+      }
     ],
   },
 ];
