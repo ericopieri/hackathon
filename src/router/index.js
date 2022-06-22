@@ -6,6 +6,7 @@ import Carrinho from '../views/Carrinho.vue'
 import Historico from '../views/Historico.vue'
 import Login from '../views/Login.vue'
 import Cadastro from '../views/Cadastro.vue'
+import Registro from '../views/Registro.vue'
 
 Vue.use(VueRouter);
 
@@ -39,9 +40,20 @@ const routes = [
       {
         path: "/cadastro",
         component: Cadastro
+      },
+      {
+        path: "/registro",
+        component: Registro
       }
     ],
   },
+  {
+    path: '',
+    component: () => import('../layouts/Blank.vue'),
+    children: [
+      
+    ]
+  }
 ];
 
 const router = new VueRouter({

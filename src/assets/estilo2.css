@@ -583,7 +583,7 @@
 }
 .btn-confirmar:hover {
   background-color: #1b98e0;
-  border: 2px solid #e8f1f2;
+  border: 0.5px solid #e8f1f2;
   cursor: pointer;
 }
 

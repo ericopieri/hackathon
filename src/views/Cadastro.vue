@@ -14,6 +14,7 @@
                 <p>Cadastrar</p>
             </a>
         </div>
+        <div>Já possui cadastro? <router-link to="/login" style="color: #1b98e0"> Entre </router-link></div>
     </div>
 </template>
 
