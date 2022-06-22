@@ -7,6 +7,7 @@ import Historico from '../views/Historico.vue'
 import Login from '../views/Login.vue'
 import Cadastro from '../views/Cadastro.vue'
 import Registro from '../views/Registro.vue'
+import * as firebase from '../plugins/firebase.js'
 
 Vue.use(VueRouter);
 
@@ -18,20 +19,24 @@ const routes = [
       {
         path: '',
         component: Home,
-        props: true
+        props: true,
+        meta: { requiresAuth: true }
       },
       {
         path: "/personalizacao/:id",
         component: EditPage,
-        props: true
+        props: true,
+        meta: { requiresAuth: true }
       },
       {
         path: "/carrinho",
-        component: Carrinho
+        component: Carrinho,
+        meta: { requiresAuth: true }
       },
       {
         path: "/historico",
-        component: Historico
+        component: Historico,
+        meta: { requiresAuth: true }
       },
       {
         path:"/login",
@@ -43,7 +48,8 @@ const routes = [
       },
       {
         path: "/registro",
-        component: Registro
+        component: Registro,
+        meta: { requiresAuth: true }
       }
     ],
   },
@@ -56,10 +62,21 @@ const routes = [
   }
 ];
 
+
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
   routes,
 });
+
+router.beforeEach((to, from, next) => {
+  const requiresAuth = to.matched.some(x => x.meta.requiresAuth)
+  if (requiresAuth && !firebase.auth.currentUser){
+    next("/login")
+  } else{
+    next()
+  }
+})
+
 
 export default router;
