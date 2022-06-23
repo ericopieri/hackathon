@@ -1,8 +1,7 @@
 <template>
     <nav class="nav">
         <div class="logo-nav">
-            <div class="logo"></div>
-            <router-link to="/"><mdicon class="icone-logo" name="HomeOutline"></mdicon></router-link>
+            <router-link to="/" class="logo"></router-link>
         </div>
         <div class="box-icon-nav">
             <router-link v-if="currentUser" to="/historico" class="icone-nav"><mdicon size="large" title="Histórico" name="clock-time-two-outline"></mdicon></router-link>

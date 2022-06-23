@@ -16,8 +16,13 @@ export default {
   methods: {
     criarCanvas() {
       this.canvas = new fabric.Canvas(`canva-${this.$route.params.id}`);
-      this.canvas.setHeight(500);
-      this.canvas.setWidth(800);
+      if (this.$route.params.id == 'galao1'){
+        this.canvas.setHeight(351);
+        this.canvas.setWidth(230);
+      } else{
+        this.canvas.setHeight(351);
+        this.canvas.setWidth(320);
+      }
       this.canvas.renderAll();
     },
     insereImagem(file) {
@@ -34,6 +39,8 @@ export default {
             image.scale(0.05);
           }
           this.canvas.add(image);
+          console.log(fileReaded.target.result)
+          document.querySelector('.imagem-selecionada').setAttribute('src', fileReaded.target.result)
         });
       };
       reader.readAsDataURL(file);
@@ -52,5 +59,9 @@ export default {
 .canvas-container .lower-canvas {
   width: 100%;
   height: 100%;
+}
+
+.canvas-container {
+  margin: 0;
 }
 </style>

@@ -1,6 +1,8 @@
 <template>
   <div class="personalizacao">
-    <div class="visualizador"></div>
+    <div class="visualizador" style="display: flex; align-itens: center; justify-content: center; overflow: hidden; box-sizing: border-box; border: 15px solid #e8f1f2">
+      <img src="" class="imagem-selecionada" alt="" style="transform: scale(0.8); padding: 10% 0 10% 0">
+    </div>
     <form method="post" enctype="multipart/form-data">
       <div>
         <label class="inserir" for="image_uploads">INSIRA UMA IMAGEM</label>
@@ -43,13 +45,14 @@ export default {
       }
     },
     tirarPrint(){
-      html2canvas(document.querySelector(".garrafa-personalizavel"), {allowTaint: true, windowWidth: window.innerWidth, windowHeight: window.innerHeight}).then(canva => {
+      const localFoto = document.getElementsByClassName("garrafa-personalizavel")[0]
+      html2canvas(localFoto, {}).then(canva => {
         // console.log(canva.toDataURL())
-        let af = document.createElement('a')
-        af.href = canva.toDataURL('image/png')
-        af.download = 'af.png'
-        af.click()
-        console.log(canva.toDataURL('image/png'))
+        let a = document.createElement('a')
+        a.href = canva.toDataURL('image/jpeg')
+        a.download = 'a.png'
+        a.click()
+        // console.log(canva.toDataURL('image/png'))
       })
     }
   },
