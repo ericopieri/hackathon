@@ -3,6 +3,7 @@ import App from "./App.vue";
 import router from "./router";
 import "./assets/estilo.css";
 import "./assets/estilo2.css";
+import './plugins/firebase.js'
 
 import mdiVue from "mdi-vue";
 import * as mdijs from "@mdi/js";
