@@ -29,11 +29,14 @@ const routes = [
       },
       {
         path: "/carrinho",
-        component: Carrinho
+        component: Carrinho,
+        meta: { requiresAuth: true }
       },
       {
         path: "/historico",
-        component: Historico
+        component: Historico,
+        meta: { requiresAuth: true },
+        props: true
       },
       {
         path:"/login",

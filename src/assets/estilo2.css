@@ -164,7 +164,7 @@
 }
 .icone-desc {
   color: #1b98e0;
-  font-size: 2000%;
+  font-size: 120px;
   margin-right: 5%;
 }
 .divisor {
@@ -183,7 +183,6 @@
 .titulo-garrafa {
   font-size: 250%;
   margin-top: 15%;
-  -webkit-text-stroke: 0.7px #e8f1f2;
 }
 .box-desc-garrafa {
   width: 80%;
@@ -211,7 +210,7 @@
   padding: 10%;
   margin-bottom: 20%;
   background-image: url(1.3.svg);
-  background-size: contain;
+  background-size: 45%;
   background-repeat: no-repeat;
   background-position: center;
   border: 2px solid #1b98e0;
@@ -224,7 +223,7 @@
   padding: 10%;
   margin-bottom: 20%;
   background-image: url(1.6.svg);
-  background-size: contain;
+  background-size: 60%;
   background-repeat: no-repeat;
   background-position: center;
   border: 2px solid #1b98e0;
@@ -237,7 +236,7 @@
   padding: 10%;
   margin-bottom: 20%;
   background-image: url(dose.svg);
-  background-size: contain;
+  background-size: 45%;
   background-repeat: no-repeat;
   background-position: center;
   border: 2px solid #1b98e0;
@@ -292,7 +291,7 @@
   top: 33%;
   left: 50%;
   transform: translateX(-50%);
-  width: 40%;
+  width: 45%;
   height: 53.8%;
 }
 
@@ -326,7 +325,6 @@
     transform: translateX(-50%);
     width: 38.9%;
     height: 54.8%;
-    overflow: hidden;
   }
   .canva-galao2 {
     z-index: 1;
@@ -337,7 +335,6 @@
     transform: translateX(-50%);
     width: 53%;
     height: 54%;
-    overflow: hidden;
   }
 }
 
@@ -351,7 +348,6 @@
     transform: translateX(-50%);
     width: 45.2%;
     height: 54%;
-    overflow: hidden;
   }
   .canva-galao2 {
     z-index: 1;
@@ -438,7 +434,7 @@
 }
 .inserir {
   width: 100%;
-  height: 10%;
+  height: 70px;
   background-color: #1b98e0;
   border: 1px solid #e8f1f2;
   border-radius: 10px;
@@ -466,10 +462,25 @@
   justify-content: space-around;
 }
 
+.container-blur-carrinho{
+  width: 70%;
+  height: 80%;
+  background-color: rgb(255, 255, 255, 0.2);
+  box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 15%;
+  top: 15%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(18px);
+}
+
 .container-carrinho {
   width: 90%;
   left: 5%;
-  height: 33%;
+  height: 55%;
   border-bottom: 1px solid #1b98e0;
   display: flex;
   flex-direction: row;
@@ -492,17 +503,17 @@
 .imagem-1 {
   background-image: url(1.3.svg);
   background-position: center;
-  background-size: contain;
+  background-size: 60%;
 }
 .imagem-2 {
   background-image: url(1.6.svg);
-  background-position: 70%;
-  background-size: contain;
+  background-position: 50%;
+  background-size: 80%;
 }
 .imagem-3 {
   background-image: url(dose.svg);
   background-position: 50%;
-  background-size: contain;
+  background-size: 60%;
 }
 .box-textos-carrinho {
   height: 95%;
@@ -682,4 +693,17 @@
 }
 .id-compra {
   color: #1b98e0;
+}
+.comprar{
+  transition: 200ms;
+  background-color: #a3e263;
+  padding: 15px;
+  font-size: 30px;
+  border-radius: 10px;
+  border: 2px solid #52851e;
+  color: #fff;
+}
+.comprar:hover{
+  background-color: #52851e;
+  border: 2px solid #a3e263;
 }

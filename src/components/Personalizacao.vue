@@ -1,6 +1,6 @@
 <template>
   <div class="personalizacao">
-    <div class="visualizador" style="display: flex; align-itens: center; justify-content: center; overflow: hidden; box-sizing: border-box; border: 15px solid #e8f1f2">
+    <div class="visualizador" style="max-width:575px; display: flex; align-itens: center; justify-content: center; overflow: hidden; box-sizing: border-box; border: 15px solid #e8f1f2">
       <img src="" class="imagem-selecionada" alt="" style="transform: scale(0.8); padding: 10% 0 10% 0">
     </div>
     <form method="post" enctype="multipart/form-data">
@@ -18,11 +18,11 @@
       </div>
     </form>
     <div class="box-exportar">
-      <div class="baixar">
-        <h2 class="texto-centro" @click="tirarPrint">Exportar PNG</h2>
+      <div class="baixar" style="background-color: #a3e263;">
+        <h2 class="texto-centro" @click="enviarParaCarrinho">Adicionar ao carrinho</h2>
       </div>
       <div class="baixar">
-        <h2 class="texto-centro">Exportar PDF</h2>
+        <h2 class="texto-centro" @click="tirarPrint">Exportar PNG</h2>
       </div>
     </div>
   </div>
@@ -45,7 +45,7 @@ export default {
         EventBus.$emit("insereImagemBus", file);
       }
     },
-    tirarPrint(){
+    enviarParaCarrinho(){
       const localFoto = document.getElementsByClassName("garrafa-personalizavel")[0]
       html2canvas(localFoto, {}).then(canva => {
         canva.toBlob((blob) => {
@@ -54,7 +54,16 @@ export default {
           });
         })
       })
-    }
+    },
+    tirarPrint(){
+      html2canvas(document.querySelector(".garrafa-personalizavel"), {allowTaint: true, windowWidth: window.innerWidth, windowHeight: window.innerHeight}).then(canva => {
+        // console.log(canva.toDataURL())
+        let download = document.createElement('a')
+        download.href = canva.toDataURL('image/png')
+        download.download = 'download.png'
+        download.click()
+        console.log(canva.toDataURL('image/png'))
+    })}
   },
 };
 </script>

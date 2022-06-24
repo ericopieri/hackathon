@@ -12,18 +12,39 @@
             <input class="input-registro input-Telefone" v-mask="'(##) #####-####'" id="telefone" name="telefone" placeholder="Telefone" v-model="tel">
             <input class="input-registro input-Informacoes" placeholder="Informações Adicionais" type="text">
         </div>
-        <div class="btn-confirmar">
+        <div class="comprar" @click="showAlert">
             <p>Confirmar Compra</p>
         </div>
   </div>
 </template>
 
 <script>
+import 'sweetalert2/dist/sweetalert2.min.css';
 export default {
   data() {
     return {
       tel: '',
       cep: ''
+    }
+  },
+  methods: {
+    showAlert(){
+      if(!this.cep){
+        this.$swal({
+          icon:'error',
+          text:'Insira um CEP para continuar!',
+          confirmButtonColor:'#FF6961',
+          confirmButtonText: 'Fechar'
+          })
+      } else{
+        this.$swal({
+          icon:'success',
+          text:'Compra confirmada!',
+          confirmButtonColor:'#90EE90',
+          confirmButtonText: 'Confirmar'
+          }).then(() => {
+            setTimeout(() => { this.$router.push({path:'/historico'})}, 1000)})
+      }
     }
   }
 }

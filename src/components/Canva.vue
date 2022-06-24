@@ -18,7 +18,7 @@ export default {
       this.canvas = new fabric.Canvas(`canva-${this.$route.params.id}`);
       if (this.$route.params.id == 'galao1'){
         this.canvas.setHeight(351);
-        this.canvas.setWidth(230);
+        this.canvas.setWidth(258);
       } else{
         this.canvas.setHeight(351);
         this.canvas.setWidth(320);
