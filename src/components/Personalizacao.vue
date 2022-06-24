@@ -18,11 +18,11 @@
       </div>
     </form>
     <div class="box-exportar">
-      <div class="baixar" style="background-color: #a3e263;">
+      <div class="baixar" style="background-color: #a3e263; cursor:pointer;">
         <h2 class="texto-centro" @click="enviarParaCarrinho">Adicionar ao carrinho</h2>
       </div>
-      <div class="baixar">
-        <h2 class="texto-centro" @click="tirarPrint">Exportar PNG</h2>
+      <div class="baixar" @click="tirarPrint">
+        <h2 class="texto-centro" style="cursor:pointer;" >Exportar PNG</h2>
       </div>
     </div>
   </div>
@@ -51,6 +51,16 @@ export default {
         canva.toBlob((blob) => {
           firebase.storage.ref(firebase.auth.currentUser.uid).put(blob).then((snapshot) => {
             console.log(snapshot);
+            this.$swal({
+              icon: 'success',
+              text: 'Item adicionado. Você será direcionado ao carrinho!',
+              confirmButtonColor:'#90EE90',
+              confirmButtonText: 'Ir ao carrinho'
+            }).then(() => {
+              setTimeout(()=> {
+                this.$router.push({path:"/carrinho"})
+              },1000)
+            })
           });
         })
       })
@@ -65,6 +75,7 @@ export default {
         console.log(canva.toDataURL('image/png'))
     })}
   },
+
 };
 </script>
 
