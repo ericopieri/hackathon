@@ -66,7 +66,7 @@ export default {
       })
     },
     tirarPrint(){
-      html2canvas(document.querySelector(".garrafa-personalizavel"), {allowTaint: true, windowWidth: window.innerWidth, windowHeight: window.innerHeight}).then(canva => {
+      html2canvas(document.querySelector(".garrafa-personalizavel"), {allowTaint: true, windowWidth: 1920, windowHeight: 1080}).then(canva => {
         // console.log(canva.toDataURL())
         let download = document.createElement('a')
         download.href = canva.toDataURL('image/png')
