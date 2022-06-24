@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="calculo-preco">
-            <h3>R$ 00,00</h3>
+            <h3 class="texto-centro">R$ 30,00 (Garrafa)<br>+<br>R$ 15,00 (Personalização)</h3>
         </div>
     </div>
     <!-- <div class="container-carrinho">
