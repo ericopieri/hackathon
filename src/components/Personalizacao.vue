@@ -31,6 +31,7 @@
 <script>
 import EventBus from "@/event-bus/eventBus.js";
 import html2canvas from 'html2canvas';
+import * as firebase from '../plugins/firebase.js'
 
 export default {
   mounted(){
@@ -47,12 +48,11 @@ export default {
     tirarPrint(){
       const localFoto = document.getElementsByClassName("garrafa-personalizavel")[0]
       html2canvas(localFoto, {}).then(canva => {
-        // console.log(canva.toDataURL())
-        let a = document.createElement('a')
-        a.href = canva.toDataURL('image/jpeg')
-        a.download = 'a.png'
-        a.click()
-        // console.log(canva.toDataURL('image/png'))
+        canva.toBlob((blob) => {
+          firebase.storage.ref(firebase.auth.currentUser.uid).put(blob).then((snapshot) => {
+            console.log(snapshot);
+          });
+        })
       })
     }
   },

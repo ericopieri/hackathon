@@ -1,6 +1,6 @@
 <template>
     <nav class="nav">
-        <div class="logo-nav">
+        <div class="logo-nav" >
             <router-link to="/" class="logo"></router-link>
         </div>
         <div class="box-icon-nav">
@@ -20,8 +20,10 @@ export default {
             isLogged: false
         }
     },
-    mounted(){
-        this.isLogged = (firebase.auth.currentUser) ? true : false 
+    methods: {
+        async logout() {
+            firebase.auth.signOut()
+        }
     }
 }
 </script>

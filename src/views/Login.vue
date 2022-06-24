@@ -10,7 +10,7 @@
                 <p>Logar</p>
             </a>
         </div>
-        <div>Não possue login? <router-link to="/cadastro" style="color: #1b98e0"> Cadastre-se </router-link></div>
+        <div id="pergunta-cadastro">Não possue login? <router-link to="/cadastro" id="buttonzin"> Cadastre-se </router-link></div>
     </div>
 </template>
 

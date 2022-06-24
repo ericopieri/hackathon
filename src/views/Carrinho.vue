@@ -6,56 +6,8 @@
                 <div class="box-textos-carrinho">
                     <h1>GALÃO BODYBUILDING 1,3L</h1>
                     <div class="box-opcoes">
-                        <h2>Comprar Agora</h2>
-                        <h2>Editar</h2>
-                        <h2>Excluir</h2>
+                        <router-link :to=" { path: '/registro'}">Comprar Agora</router-link>
                     </div>
-                </div>
-                <div class="calculo-preco">
-                    <div class="box-quantidade">
-                        <h2>+</h2>
-                        <h1>1</h1>
-                        <h2>-</h2>
-                    </div>
-                    <h3>R$ 00,00</h3>
-                </div>
-            </div>
-            <div class="container-carrinho">
-                <div class="box-imagem imagem-2"></div>
-                <div class="box-textos-carrinho">
-                    <h1>GALÃO BODYBUILDING 1,6L</h1>
-                    <div class="box-opcoes">
-                        <h2>Comprar Agora</h2>
-                        <h2>Editar</h2>
-                        <h2>Excluir</h2>
-                    </div>
-                </div>
-                <div class="calculo-preco">
-                    <div class="box-quantidade">
-                        <h2>+</h2>
-                        <h1>2</h1>
-                        <h2>-</h2>
-                    </div>
-                    <h3>R$ 00,00</h3>
-                </div>
-            </div>
-            <div class="container-carrinho">
-                <div class="box-imagem imagem-3"></div>
-                <div class="box-textos-carrinho">
-                    <h1>SHAKEIRA UMA DOSE</h1>
-                    <div class="box-opcoes">
-                        <h2>Comprar Agora</h2>
-                        <h2>Editar</h2>
-                        <h2>Excluir</h2>
-                    </div>
-                </div>
-                <div class="calculo-preco">
-                    <div class="box-quantidade">
-                        <h2>+</h2>
-                        <h1>3</h1>
-                        <h2>-</h2>
-                    </div>
-                    <h3>R$ 00,00</h3>
                 </div>
             </div>
     </div>
@@ -63,8 +15,18 @@
 </template>
 
 <script>
-export default {
+import * as firebase from '../plugins/firebase.js'
 
+export default {
+    mounted() {
+        firebase.storage.ref(firebase.auth.currentUser.uid).getDownloadURL().then((url) => {
+            const box = document.querySelector('.imagem-1')
+            box.style.backgroundImage = 'url(' + url + ')'
+        })
+        .catch((error) => {
+            console.error(error)
+        });
+    }
 }
 </script>
 

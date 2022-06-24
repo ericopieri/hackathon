@@ -25,18 +25,15 @@ const routes = [
       {
         path: "/personalizacao/:id",
         component: EditPage,
-        props: true,
-        meta: { requiresAuth: true }
+        props: true
       },
       {
         path: "/carrinho",
-        component: Carrinho,
-        meta: { requiresAuth: true }
+        component: Carrinho
       },
       {
         path: "/historico",
-        component: Historico,
-        meta: { requiresAuth: true }
+        component: Historico
       },
       {
         path:"/login",
@@ -48,8 +45,7 @@ const routes = [
       },
       {
         path: "/registro",
-        component: Registro,
-        meta: { requiresAuth: true }
+        component: Registro
       }
     ],
   },

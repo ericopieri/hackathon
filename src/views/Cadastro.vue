@@ -8,13 +8,12 @@
         <input placeholder="Email" class="input-login" type="email" v-model="user.email">
         <input placeholder="Senha" class="input-login" type="password" v-model="user.senha" >
         <input placeholder="Confirmar Senha" class="input-login" type="password" v-model="user.confirmarSenha">
-        <input placeholder="Data de nascimento" class="input-login input-data" type="date">
         <div class="box-login">
             <a href="Login.html" class="texto-preto btn-login" @click.stop.prevent="signUp">
                 <p>Cadastrar</p>
             </a>
         </div>
-        <div>Já possui cadastro? <router-link to="/login" style="color: #1b98e0"> Entre </router-link></div>
+        <div id="pergunta-cadastro">Já possui cadastro? <router-link to="/login" id="buttonzin"> Entre </router-link></div>
     </div>
 </template>
 
@@ -32,6 +31,7 @@ export default {
             try {
                 if (this.user.senha == this.user.confirmarSenha) {
                     await firebase.auth.createUserWithEmailAndPassword(this.user.email, this.user.confirmarSenha)
+                    this.createProfile()
                 } else {
                     alert('Campo senha e Confirmar Senha diferentes')
                 }
@@ -39,6 +39,13 @@ export default {
             } catch (err) {
                 console.error(err.code)
             }
+        },
+        async createProfile() {
+            console.log('aqui dentro!')
+            await firebase.profilesCollection.add({
+                nomeCompleto: `${this.user.nome} ${this.user.sobrenome}`,
+                owner: firebase.auth.currentUser.uid
+            })
         }
     }
 }

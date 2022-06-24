@@ -1,11 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   text-decoration: none;
+  font-family: 'Roboto';
 }
 ::-webkit-scrollbar {
   width: 0;
 }
+
+#pergunta-login, #pergunta-cadastro {
+  text-align: center;
+  width: 100%;
+}
+
+#buttonzin {
+  border: 0.5px solid white;
+  background-color: #1b98e0;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  transition: 0.5s;
+}
+
+#buttonzin:hover {
+  background-color: white;
+  color: #1b98e0;
+  border: 0.5px solid #1b98e0;
+}
+
 .nav {
   position: fixed;
   z-index: 1000;
